@@ -1,0 +1,29 @@
+body {
+background-color: #faf3e0;
+color: black;
+}
+
+.custom-list-item {
+    background-color: #e8e2b7; /* Light beige color */
+}
+
+.custom-badge {
+    background-color: #8b4513; /* Replace with your desired color */
+    color: #ffffff; /* Text color */
+}
+
+.btn-warning {
+    background-color: #8b4513; /* Warm orange */
+    color: white;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #8b4513 !important; /* Custom brown color */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #7a3e12; /* Darker shade for hover effect */
+}
+

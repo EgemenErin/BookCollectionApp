@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}My Library{% endblock %}
+
+{% block content %}
+
+<div class="jumbotron text-center py-5">
+    <div class="container">
+        <h1 class="display-4 mb-4">📕 My Library</h1>
+        <a class="btn btn-warning btn-lg mb-4" href="{{ url_for('add') }}" role="button">Add New Book</a>
+    {% if books %}
+        <ul class="list-group list-group-numbered">
+            {% for book in books %}
+                <li class="list-group-item d-flex justify-content-between align-items-start custom-list-item">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">{{ book[1] }}</div>
+                        {{ book[2] }}
+                    </div>
+                    <span class="badge custom-badge rounded-pill">{{ book[3] }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Library is empty.</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

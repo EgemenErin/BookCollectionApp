@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+{% block title %}Add A New Book{% endblock %}
+{% block content %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+
+      <h1 class="mb-4">Add a new book into the database</h1> <!-- Added bottom margin to h1 -->
+
+      {{ render_form(form) }}
+
+    </div>
+  </div>
+</div>
+{% endblock %}
