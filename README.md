@@ -2,15 +2,20 @@
 # Book Collection App
 
 A simple Flask web application to manage a collection of books. This app allows you to add books with their title, author, and rating, which are stored in a SQLite database.
-<img width="1434" alt="image" src="https://github.com/user-attachments/assets/5e8dd366-a00c-4826-ae05-d0cb84fa1ea5">
+![image](https://github.com/user-attachments/assets/b5f86c4f-2d4b-4b1b-97b8-7715db137495)
+
 
 
 ## Features
 - View a list of all books in the collection on the homepage.
 - Add a new book with its title, author, and rating through a form.
+- Remove a book from the database
+- Change Book's rating by accessing and editing the database
 - Data is stored persistently in a SQLite database.
 - <img width="1430" alt="image" src="https://github.com/user-attachments/assets/f8a8d1a1-3351-454d-a63a-13c27f631737">
 - <img width="1425" alt="image" src="https://github.com/user-attachments/assets/0908af78-1bdd-4e94-9ea9-bb8ebd34c509">
+![image](https://github.com/user-attachments/assets/3b476324-0317-46d3-b043-d2c149217ff1)
+
 
 
 
