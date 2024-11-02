@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
+{% block title %}Edit Book{% endblock %}
 {% from 'bootstrap4/form.html' import render_form %}
-{% block title %}Add A New Book{% endblock %}
 {% block content %}
 <div class="container mt-5">
   <div class="row">
     <div class="col-sm-12 col-md-8">
 
-      <h1 class="mb-4">Add a new book into the database</h1>
+      <h1 class="mb-4">Edit book rating from the database</h1>
 
       {{ render_form(form) }}
 

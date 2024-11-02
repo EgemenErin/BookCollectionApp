@@ -32,12 +32,41 @@ class AddBookForm(FlaskForm):
     rating = IntegerField('Rating', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
+class EditRatingForm(FlaskForm):
+    rating = IntegerField('Rating', validators=[DataRequired()])
+    submit = SubmitField('Update Rating')
+
+
 @app.route('/')
 def home():
     with get_db_connection() as db:
         books = db.execute("SELECT * FROM books").fetchall()
     return render_template("index.html", books=books)
 
+
+@app.route("/remove/<int:book_id>")
+def remove(book_id):
+    with get_db_connection() as db:
+        db.execute("DELETE FROM books WHERE id = ?", (book_id,))
+        db.commit()
+    return redirect(url_for('home'))
+
+
+@app.route('/edit/<int:book_id>', methods=['GET', 'POST'])
+def edit(book_id):
+    form = EditRatingForm()
+
+    with get_db_connection() as db:
+        book = db.execute("SELECT * FROM books WHERE id = ?", (book_id,)).fetchone()
+
+    if form.validate_on_submit():
+        new_rating = form.rating.data
+        with get_db_connection() as db:
+            db.execute("UPDATE books SET rating = ? WHERE id = ?", (new_rating, book_id))
+            db.commit()
+        return redirect(url_for('home'))
+    form.rating.data = book["rating"]
+    return render_template("edit.html", form=form, book=book)
 
 @app.route("/add", methods=['GET', 'POST'])
 def add():

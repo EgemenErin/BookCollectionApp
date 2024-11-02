@@ -10,12 +10,14 @@
     {% if books %}
         <ul class="list-group list-group-numbered">
             {% for book in books %}
-                <li class="list-group-item d-flex justify-content-between align-items-start custom-list-item">
-                    <div class="ms-2 me-auto">
+                <li class="list-group-item d-flex align-items-center custom-list-item">
+                    <div class="me-auto">
                         <div class="fw-bold">{{ book[1] }}</div>
                         {{ book[2] }}
                     </div>
                     <span class="badge custom-badge rounded-pill">{{ book[3] }}</span>
+                    <a href="{{ url_for('remove', book_id=book[0]) }}" class="btn btn-danger btn-sm ms-3">Remove</a>
+                    <a href="{{ url_for('edit', book_id=book[0]) }}" class="btn btn-info btn-sm ms-3">Edit</a>
                 </li>
             {% endfor %}
         </ul>

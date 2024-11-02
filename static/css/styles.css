@@ -27,3 +27,17 @@ color: black;
     background-color: #7a3e12; /* Darker shade for hover effect */
 }
 
+.custom-list-group {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+}
+
+.custom-list-item {
+    display: flex;
+    align-items: center;
+    background-color: #e8e2b7; /* Light beige */
+    border-radius: 8px;
+    margin-bottom: 8px;
+    padding: 12px;
+}
+
